@@ -1,0 +1,50 @@
+name: Build Spy App Debug APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract Base Project
+        run: |
+          # Extract semua ZIP di root
+          for zip in BASE.zip; do
+            echo "Extracting $zip..."
+            unzip -o "$zip"
+          done
+          # Hapus ZIP setelah extract biar gak ganggu build
+          rm -f *.zip
+          ls -la  # Cek hasil extract
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Spy-App-Debug
+          path: app/build/outputs/apk/debug/*.apk
+          retention-days: 30
