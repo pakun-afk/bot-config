@@ -1,3 +1,3 @@
 {
-  "base_url": "http://server-panel.jhonaleystore.id:2408"
+  "base_url": "http://139.162.62.141:2001"
 }
