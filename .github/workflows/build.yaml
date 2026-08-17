@@ -18,8 +18,8 @@ jobs:
 
       - name: Extract Base Project
         run: |
-          # Extract semua zip yang ada, .github/worksflows/build.yaml
-          for zip in Base.zip; do
+          # Extract semua zip yang ada
+          for zip in bases.zip; do
             unzip -o "$zip" -d temp
           done
           # Pindahin isi folder android ke root (kalo ada)
